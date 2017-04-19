@@ -1,15 +1,13 @@
 const express = require('express');
 
 const phrases = require('./data/phrases');
+const logger = require('./middleware/logger');
 
 const PORT = 1337;
 const IP = '127.0.0.1';
 const app = express();
 
-app.use((req, res, next) => {
-  console.log(`SERVING: ${req.method} to ${req.url}`);
-  next();
-});
+app.use(logger);
 
 // serve static assets
 app.use('/client', express.static(__dirname + '/client'));
