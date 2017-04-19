@@ -4,7 +4,7 @@ const fs = require('fs');
 const phrases = require('./data/phrases');
 
 const PORT = 1337;
-const IP = '127.0.0.1'
+const IP = '127.0.0.1';
 
 const server = http.createServer(function(request, response){
   console.log(`SERVING: ${request.method} to ${request.url}`);
